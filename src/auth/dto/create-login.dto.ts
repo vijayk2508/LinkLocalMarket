@@ -1,7 +1,7 @@
 import { ApiProperty } from "@nestjs/swagger";
-import { IsString, Matches, MinLength } from 'class-validator';
+import { IsString, Matches, MinLength } from "class-validator";
 
-export class CreateUserDto {
+export class LoginDto {
     @ApiProperty({ example: 'User Name', description: 'This is a unique ', required: true, })
     username: string;
 
@@ -12,10 +12,4 @@ export class CreateUserDto {
         message: 'Password must contain at least one letter, one number, and one special character.',
     })
     password: string;
-
-    @ApiProperty({ example: ["Admin", "User"], description: 'There would be multiple roles', required: true })
-    roles: string[];
-
-    @ApiProperty({ example: ["Admin", "User"], description: 'There would be multiple roles', required: true })
-    permissions: string[];
 }
